@@ -45,7 +45,7 @@ int  buscarElemento(lista* p, int n) { //Busca un elemento en la lista y devuelv
     return contador;
 }
 
-void eliminarNum(lista** p, int n) {
+void eliminarNum(lista** p, int n) { //Elimina un numero n de la lista
     lista* ax = *p;
     lista* t = *p;
 
@@ -74,27 +74,30 @@ void eliminarNum(lista** p, int n) {
     }
 }
 
-void insertarF(lista** p, int n) {
+void insertarF(lista** p, int n) { //Inserta un número n al final de la lista
     lista* ax = new lista;
     lista* t = *p;
     ax->valor = n;
     ax->prox = NULL;
 
-    if (*p == NULL) {
+    if (*p == NULL) { //Si p no apunta a nada, entonces ax es el único nodo
         *p = ax;
         return;
     }
 
-    while ((t) && (t->prox)) {
+    while ((t) && (t->prox)) { //Recorro la lista para llegar al final y cundo t->prox no exista salir del while
         t = t->prox;
     }
 
-    if (t->prox == NULL) {
+    if (t->prox == NULL) { //Ubico ax (valor y prox) en la dirección t->prox
         t->prox = ax;
     }
 }
 
 void eliminarU(lista** p, int n) {
+    lista* ax = *p;
+    lista* t = *p;
+
 
 }
 
